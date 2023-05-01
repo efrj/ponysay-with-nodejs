@@ -4,7 +4,7 @@
 
 This project is a web application that uses Node.js to display text messages with Ponysay characters using Asciinema.
 
-![Application screenshot](images/reademe.png)
+![Application screenshot](images/readme.png)
 
 ## Prerequisites
 
