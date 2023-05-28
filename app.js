@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-  res.render('index', { castPath: null });
+  res.render('index', { castPath: null, message: null });
 });
 
 app.post('/ponysay', async (req, res) => {
@@ -48,7 +48,7 @@ app.post('/ponysay', async (req, res) => {
 
   try {
     await recordPonysay();
-    res.render('index', { castPath: `/casts${tmpFile.substring(castDir.length)}` });
+    res.render('index', { message: message, castPath: `/casts${tmpFile.substring(castDir.length)}` });
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal server error.');

@@ -6,6 +6,29 @@
   <link rel="stylesheet" href="https://unpkg.com/asciinema-player@2.6.1/resources/public/css/asciinema-player.css">
   <script src="https://unpkg.com/asciinema-player@2.6.1/resources/public/js/asciinema-player.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    #character {
+      text-transform: capitalize;
+    }
+  </style>
+  <script>
+    fetch('/js/ponies.json')
+      .then(response => response.json())
+      .then(data => {
+        const select = document.getElementById('character');
+        const sortedPonies = data.ponies.sort();
+        data.ponies.forEach(pony => {
+          const option = document.createElement('option');
+          const match = pony.match(/^(.*?)\s*\([^)]*\)$/);
+          option.value = match ? match[1] : pony;
+          option.textContent = pony.charAt(0).toUpperCase() + pony.slice(1);
+          select.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching ponies:', error);
+      });
+  </script>  
 </head>
 <body>
   <div class="container">
@@ -16,18 +39,11 @@
         <form method="post" action="/ponysay">
           <div class="form-group">
             <label for="character">Character:</label>
-            <select id="character" name="character" class="form-control">
-              <option value="TwilightSparkle">Twilight Sparkle</option>
-              <option value="RainbowDash">Rainbow Dash</option>
-              <option value="Fluttershy">Fluttershy</option>
-              <option value="Applejack">Applejack</option>
-              <option value="Rarity">Rarity</option>
-              <option value="PinkiePie">Pinkie Pie</option>
-            </select>
+            <select id="character" name="character" class="form-control"></select>
           </div>
           <div class="form-group">
             <label for="message">Mensage:</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
+            <textarea id="message" name="message" class="form-control" rows="8" required><%=message %></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send</button>
         </form>
