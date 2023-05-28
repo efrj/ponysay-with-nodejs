@@ -24,33 +24,48 @@ You can find installation instructions for each of these packages in the "Instal
 ``sudo apt-get install texinfo``
 
 ### ponysay
-Make sure Python is installed, as Ponisey is written in this programming language.
-``git clone https://github.com/erkin/ponysay.git``
-``cd ponysay``
+Make sure Python is installed, as Ponisey is written in this programming language. 
+
+``git clone https://github.com/erkin/ponysay.git`` 
+
+``cd ponysay`` 
+
 ``./setup.py --freedom=partial install``
 
-### Asciinema
-``sudo apt-add-repository ppa:zanchey/asciinema``
-``sudo apt-get update``
+### Asciinema 
+
+``sudo apt-add-repository ppa:zanchey/asciinema`` 
+
+``sudo apt-get update`` 
+
 ``sudo apt-get install asciinema``
 
 ## Running the project without Docker
 
-1. Clone this repository:
-``git clone https://github.com/efrj/ponysay-with-nodejs``
+1. Clone this repository: 
 
-2. Enter the project folder:
-``ponysay-with-nodejs``
+``git clone https://github.com/efrj/ponysay-with-nodejs`` 
 
-3. Install Node.js dependencies:
+2. Enter the project folder: 
+
+``ponysay-with-nodejs`` 
+
+3. Install Node.js dependencies: 
+
 ``npm install``
 
-4. Launch the application:
+4. Launch the application: 
+
 ``node app.js``
 
 The application will be available at http://localhost:3000.
 
-## Running the project with Docker
+## Running the project with Docker 
+
+### Note: 
+
+The application is still not working properly in a Docker environment because of Asciinema. Tests are being carried out with other solutions to show the prints displayed by Ponysay. 
+
 
 1. Install Docker and Docker Compose on your system.
 2. Clone this repository:
@@ -122,6 +137,10 @@ Certifique-se de que o Python está instalado, pois o Ponisey é escrito nesta l
 A aplicação estará disponível no endereço http://localhost:3000. 
 
 ## Executando o projeto com Docker 
+
+### Observação: 
+
+A aplicação ainda não está funcionando corretamente em ambiente Docker por causa do Asciinema. Estão sendo realizados testes com outras soluções para mostrar as gravuras exibidas pelo Ponysay. 
 
 1. Instale o Docker e o Docker Compose em seu sistema. 
 2. Clone este repositório: 
