@@ -160,5 +160,5 @@ A aplicação estará disponível no endereço http://localhost:3000.
 ### Contribuindo 
 Se você deseja contribuir com este projeto, envie uma solicitação de pull para o repositório original. Todas as contribuições são bem-vindas!
 
-Licença
+## Licença 
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter mais informações.
