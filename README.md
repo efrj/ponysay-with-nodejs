@@ -85,7 +85,7 @@ The application will be available at http://localhost:3000.
 ### Contributing
 If you want to contribute to this project, please submit a pull request to the original repository. All contributions are welcome!
 
-# License 
+## License 
 This project is licensed under the MIT license. See the LICENSE file for more information.
 
 ## Instruções em Português
